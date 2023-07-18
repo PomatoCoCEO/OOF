@@ -9,7 +9,7 @@ Supports the following features:
 - saving any other data structure you like, as long as you define a function to save it
 - producing a report of all the files saved throughout one run of your program
 
-The various files generated throughout program execution are then adequately organized into a directory structure of the kind (year)/(month)/(day)/(hour)-(minute)/(run number); and are separated by format (text, figures, numpy arrays, etc).
+The various files generated throughout program execution are then adequately organized into a directory structure of the kind ``(year)/(month)/(day)/(hour)-(minute)/(run number)``; and are separated by format (text, figures, numpy arrays, etc).
 
 To use it, simply import the module and create an instance of the class OOF:
 
@@ -28,6 +28,7 @@ oof.log("This is a log message")
 
 # figures are saved as png files; and non-blocking plots are shown with plot()
 oof.plot(x,y)
+oof.plot_3d(x,y,z)
 
 # numpy arrays are saved as npy or npz files
 oof.save_array(my_array,'my_array')
