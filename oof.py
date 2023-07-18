@@ -96,7 +96,6 @@ class OOF:
         if compressed:
             data = np.load(self.output_folder + f"/npz/{name}.npz")
             ks = data.files
-            print("ks", ks)
             if len(ks) == 1:
                 return data[ks[0]]
             else:
