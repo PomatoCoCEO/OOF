@@ -60,6 +60,13 @@ def test_load_array_compressed():
     assert oof.load_array("test", compressed=True).all() == np.array([1, 2, 3]).all()
     shutil.rmtree(oof.output_folder)
 
+def test_report():
+    oof = OOF()
+    oof.log("test")
+    assert os.path.isfile(oof.output_folder + "/txt/log.txt")
+    oof.report()
+    shutil.rmtree(oof.output_folder)
+
 
 if __name__ == "__main__":
     test_folder_creation()
@@ -70,4 +77,5 @@ if __name__ == "__main__":
     test_load_array()
     test_save_array_compressed()
     test_load_array_compressed()
+    test_report()
     print("All tests passed!")
