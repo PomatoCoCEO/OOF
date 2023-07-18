@@ -3,11 +3,11 @@
 For research projects where it is easy to become overwhelmed with the disorganization of the output files.
 
 Supports the following features:
-    - logging text into a log
-    - saving matplotlib figures
-    - saving numpy arrays, compressed or uncompressed
-    - saving any other data structure you like, as long as you define a function to save it
-    - producing a report of all the files saved throughout one run of your program
+- logging text into a log
+- saving matplotlib figures
+- saving numpy arrays, compressed or uncompressed
+- saving any other data structure you like, as long as you define a function to save it
+- producing a report of all the files saved throughout one run of your program
 
 The various files generated throughout program execution are then adequately organized into a directory structure of the kind (year)/(month)/(day)/(hour)-(minute)/(run number); and are separated by format (text, figures, numpy arrays, etc).
 
