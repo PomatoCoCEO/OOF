@@ -1,15 +1,15 @@
 # OOF: The Output Organizing Framework
 
-For research projects where it is easy to become overwhelmed with the disorganization of the output files.
+For research projects where it is easy to become overwhelmed with the disorganization of the output files. OOF aims to get that sigh of relief in your face as you see your output files neatly organized in a directory structure that makes sense.
 
-Supports the following features:
+This framework supports the following features:
 - logging text into a log
 - saving matplotlib figures
 - saving numpy arrays, compressed or uncompressed
 - saving any other data structure you like, as long as you define a function to save it
 - producing a report of all the files saved throughout one run of your program
 
-The various files generated throughout program execution are then adequately organized into a directory structure of the kind ``(year)/(month)/(day)/(hour)-(minute)/(run number)``; and are separated by format (text, figures, numpy arrays, etc).
+The various files generated throughout program execution are then adequately organized into a directory structure of the kind ``<year>/<month>/<day>/<hour>-<minute>/<run number>``; and are separated by format (text, figures, numpy arrays, etc).
 
 To use it, simply import the module and create an instance of the class OOF:
 
@@ -35,7 +35,21 @@ oof.save_array(my_array,'my_array')
 oof.save_array(my_array,'my_array',compressed=True)
 
 # user-defined data structures are saved with a user-defined function
-oof.save_data(my_data,'my_data',my_save_function)
+oof.save_data(my_data,'my_data',my_save_function,'format')
+
+```
+
+Loading your files is also easy:
+
+```python
+# load a numpy array
+my_array = oof.load_array('my_array')
+
+# load a compressed numpy array
+my_array = oof.load_array('my_array',compressed=True)
+
+# load a user-defined data structure
+my_data = oof.load_data('my_data',my_load_function,'format')
 
 ```
 

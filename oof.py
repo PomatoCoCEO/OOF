@@ -109,20 +109,20 @@ class OOF:
     def save_data(self, data, name: str, lambda_save, format: str) -> None:
         '''saves data in a user-defined format'''
         # takes the data, the name of the file, the format and the function to use for formatting
-        if not os.isdir(self.output_folder + f"/{format}"):
+        if not os.path.isdir(self.output_folder + f"/{format}"):
             os.makedirs(self.output_folder + f"/{format}")
-        lambda_save(data, self.output_folder + f"/format/{name}.{format}")
+        lambda_save(data, self.output_folder + f"/{format}/{name}.{format}")
 
     # loads data in a user-defined format
     def load_data(self, name: str, lambda_load, format: str) -> None:
         '''loads data in a user-defined format'''
         # takes the name of the file, the format and the function to use for formatting
-        return lambda_load(self.output_folder + f"/format/{name}.{format}")
+        return lambda_load(self.output_folder + f"/{format}/{name}.{format}")
 
     def report(self) -> None:
         '''prints the report of the file structure in the console'''
         # prints the report of the file structure in the console
-        print("OFoI Report")
+        print("OOF Report")
         print("-----------")
         print(f"Output Folder: {self.output_folder}")
         print(f"Config: {self.config}")
